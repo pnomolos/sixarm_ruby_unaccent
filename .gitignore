@@ -1,3 +1,13 @@
 .bundle
 .coveralls.yml
 vendor
+
+*.o
+*.bundle
+*.dSYM
+a.out
+*.so
+*~
+\#*
+Makefile
+

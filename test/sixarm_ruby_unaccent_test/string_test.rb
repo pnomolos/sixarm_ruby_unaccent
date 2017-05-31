@@ -25,6 +25,14 @@ describe String do
       "νέα".unaccent.must_equal "νεα"
     end
 
+    Dir[File.expand_path("../samples/*.txt", __FILE__)].each do |path|
+      it "properly unaccents #{path}" do
+        before = File.read(path)
+        after = File.read(path.gsub(".txt", ".clean"))
+        before.unaccent.must_equal after
+      end
+    end
+
   end
 
 end

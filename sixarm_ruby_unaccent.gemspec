@@ -16,22 +16,26 @@ Gem::Specification.new do |s|
   s.cert_chain     = ["/opt/keys/sixarm/sixarm-rsa-4096-x509-20150314-public.pem"]
 
   s.platform       = Gem::Platform::RUBY
-  s.require_path   = "lib"
+  s.require_paths  = %w{lib ext}
+  s.extensions     = %w{ext/sixarm_ruby_unaccent/extconf.rb}
   s.has_rdoc       = true
 
   s.files = [
     "Rakefile",
+    "ext/sixarm_ruby_unaccent/extconf.rb",
+    "ext/sixarm_ruby_unaccent/sixarm_ruby_unaccent.c",
     "lib/sixarm_ruby_unaccent.rb",
-    "lib/sixarm_ruby_unaccent/string.rb",    
+    "lib/sixarm_ruby_unaccent/string.rb",
   ]
 
   s.test_files = [
     "test/sixarm_ruby_unaccent_test.rb",
-    "test/sixarm_ruby_unaccent_test/string_test.rb",    
+    "test/sixarm_ruby_unaccent_test/string_test.rb",
   ]
 
   s.add_development_dependency('minitest', '>= 5.7.0', '< 6')
   s.add_development_dependency('rake', '> 10.4.2', '< 11')
+  s.add_development_dependency 'rake-compiler', "~> 1.0.4"
   s.add_development_dependency('simplecov', '>= 0.10.0', '< 2')
   s.add_development_dependency('coveralls', '>= 0.8.2', '< 2')
 

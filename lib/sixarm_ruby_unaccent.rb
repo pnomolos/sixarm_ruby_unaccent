@@ -4,3 +4,4 @@ Please see README
 =end
 
 require_relative "sixarm_ruby_unaccent/string"
+require "sixarm_ruby_unaccent/sixarm_ruby_unaccent"

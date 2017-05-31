@@ -13,9 +13,9 @@ class String
   #
   # @return [String] a string that has no accents
 
-  def unaccent
-    split(//u).map {|c| ACCENTMAP[c] || c }.join("")
-  end
+  # def unaccent
+  #   split(//u).map {|c| ACCENTMAP[c] || c }.join("")
+  # end
 
   protected
 
